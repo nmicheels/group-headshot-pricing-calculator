@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Group Headshot Pricing Calculator</title>
+  <title class="header">Group Headshot Pricing Calculator</title>
   <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <h1> Group Headshot Pricing Calculator</h1><br>
-      
-      <label style="font-size:25px"># of People:</label> 
+      <h1>Group Headshot Pricing Calculator</h1><br>
+    <p>
+      <label># of People:</label> 
       <input style="font-size:25px" class="textbox" type="value" id="inData" onclick="clearOutput()"/>
           <style>
             .textbox {
                width: 40px;
                padding: 10px;
+               background-color: antiquewhite;
             }
           </style>
 
@@ -30,25 +31,35 @@
               border: none;
             }
           </style>
-      <label style="font-size:25px">Price: $</label>
-      <output style="font-size:25px" id="outData" ></output><br><br>
-      
-      
+      <label class="amount">Price: </label>
+          <style>
+            .amount {
+              font-size:25px;
+            }
+          </style>
+
+      <output class="result" id="outData"></output><br><br>
+          <style>
+            .result {
+              font-size: 25px;
+            }
+          </style>
+    </p>
       <script>
         const input = document.getElementById('inData');
-        const output = document.getElementById('outData');
-        
+        let output = document.getElementById('outData');
+
         function clearOutput() {
           output.innerHTML = null
         }
         
         function callData() {
-          {if (input.value>5) {output.innerHTML = 800 + 100 * (input.value - 5)} else 
+          {if (input.value>5) {output.innerHTML = '$' + (800 + 100 * (input.value - 5)).toLocaleString("en-US")} else 
           if (input.value<1) {output.innerHTML = null} else
-          if (input.value<6) {output.innerHTML = 200 + 150 * (input.value - 1)}
+          if (input.value<6) {output.innerHTML = '$' + (200 + 150 * (input.value - 1)).toLocaleString("en-US")}
           }
         }
-      </script>
+        </script>
 
 
     </body>
