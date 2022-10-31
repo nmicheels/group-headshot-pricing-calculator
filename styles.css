@@ -1,6 +1,6 @@
 body {
     margin: 0%;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: darkslategray;
 }
@@ -16,5 +16,5 @@ p {
     margin-right: 15%;
     padding: 15px;
     font-size: 25px;
-    border: 5px solid black;
+    border: 3px solid gray;
 }
