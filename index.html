@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <h1>Group Headshot Pricing Calculator</h1><br>
+      <h1>Group Headshot Pricing Calculator</h1>
     <p>
       <label># of People:</label> 
       <input style="font-size:25px" class="textbox" type="value" id="inData" onclick="clearOutput()"/>
@@ -20,17 +20,8 @@
             }
           </style>
 
-      <input type="button" class="button" onclick="callData()" value="Calculate Price"/><br><br>
-          <style>
-            .button {
-              background-color: green;
-              font-size: 25px;
-              color: white;
-              cursor: pointer;
-              padding: 15px 32px;
-              border: none;
-            }
-          </style>
+      <button id="btn" class="button" onclick="callData()">"Calculate Price"</button><br><br>
+          
       <label class="amount">Price: </label>
           <style>
             .amount {
@@ -59,6 +50,17 @@
           if (input.value<6) {output.innerHTML = '$' + (200 + 150 * (input.value - 1)).toLocaleString("en-US")}
           }
         }
+
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("btn").click();
+          }
+          else {
+            clearOutput()
+          }
+        });
+
         </script>
 
 
