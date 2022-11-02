@@ -18,3 +18,19 @@ p {
     font-size: 25px;
     border: 3px solid gray;
 }
+
+
+
+button {
+    background-color: green;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 15px 32px;
+    border: 2px solid green;
+}
+    button:hover {
+        color: rgb(0, 68, 0);
+        background: rgba(0, 128, 0, 0.795);
+        box-shadow: 1px 1px 3px;
+    }
